@@ -1,0 +1,65 @@
+#
+# This smaple tests functionalities in multi clients  
+#
+s1> init -u Jack
+Jack@nctu.edu.tw
+s2> init -u Ann
+Ann@nctu.edu.tw
+s3> init -u Mark
+Mark@nctu.edu.tw
+s1> ls -u
+Jack@nctu.edu.tw
+Ann@nctu.edu.tw
+Mark@nctu.edu.tw
+s2> ls -l
+no mail
+s3> ls -a
+Account: Mark
+Mail address: Mark@nctu.edu.tw
+Number of mails: 0
+s1> wt -d Ann@nctu.edu.tw -t Hi -c I_am_Jack
+done
+s1> wt -d Bob@nctu.edu.tw -t Hi -c I_am_Jack
+args error
+s1> wt -d Mark@nctu.edu.tw -t Hi -c I_am_Jack
+done
+s2> rd -r 1
+From: Jack@nctu.edu.tw
+To: Ann@nctu.edu.tw
+Date: 2015-11-9 14:36:9
+Title: Hi
+Content: I_am_Jack
+s2> wt -d Mark@nctu.edu.tw -t Stranger -c Who_is_Jack
+done
+s3> ls -l
+1. Hi(new)
+2. Stranger(new)
+s3> rd -r 2
+From: Ann@nctu.edu.tw
+To: Mark@nctu.edu.tw
+Date: 2015-11-9 14:36:9
+Title: Stranger
+Content: Who_is_Jack
+s3> wt -d Ann@nctu.edu.tw -t Stranger -c I_dont_know
+done
+s3> ls -l
+1. Hi(new)
+2. Stranger
+s2> rd -r 2
+From: Mark@nctu.edu.tw
+To: Ann@nctu.edu.tw
+Date: 2015-11-9 14:36:9
+Title: Stranger
+Content: I_dont_know
+s2> rm -D
+done
+s2> ls -a
+Account: Ann
+Mail address: Ann@nctu.edu.tw
+Number of mails: 0
+s1> exit
+exit
+s2> exit
+exit
+s3> exit
+exit

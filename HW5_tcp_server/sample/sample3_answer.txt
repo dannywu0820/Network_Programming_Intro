@@ -1,0 +1,48 @@
+#
+# This smaple tests functionalities in trouble shooting 
+#
+s1> init -u Jack
+Jack@nctu.edu.tw
+s2> init -u Ann
+Ann@nctu.edu.tw
+s3> init -u Mark
+Mark@nctu.edu.tw
+s4> init -u Jack
+This account has been registered
+s5> init -u Mark
+This account has been registered
+s1> ls -a -l -s
+args error
+s2> ls -l 123
+args error
+s3> wt -d Jack@nctu.edu.tw -t hello world -c Hi_I_am_Jack
+option error
+s4> ls -u
+Jack@nctu.edu.tw
+Ann@nctu.edu.tw
+Mark@nctu.edu.tw
+s5> ls -a
+init first
+s1> rm -r 1
+option error
+s1> rm -R -r
+option error
+s2> exit
+exit
+s1> ls -u
+Jack@nctu.edu.tw
+Mark@nctu.edu.tw
+s3> exit
+exit
+s1> ls -u
+Jack@nctu.edu.tw
+s4> exit
+exit
+s1> ls -u
+Jack@nctu.edu.tw
+s5> exit
+exit
+s1> ls -u
+Jack@nctu.edu.tw
+s1> exit
+exit

@@ -1,0 +1,27 @@
+#
+# This smaple tests functionalities in arguments with double quotation
+#
+s1> init -u Jack-1
+Jack-1@nctu.edu.tw
+s2> init -u "Jack-r_20"
+Jack-r_20@nctu.edu.tw
+s1> wt -d "Jack-r_20@nctu.edu.tw" -t "Nice to meet you." -c I_am_Jack_too.
+done
+s2> rd -d "1"
+option error
+s2> rd -r "1"
+args error
+s2> rd -r 1
+From: Jack-1@nctu.edu.tw
+To: Jack-r_20@nctu.edu.tw
+Date: 2015-11-9 14:38:48
+Title: Nice to meet you.
+Content: I_am_Jack_too.
+s2> rm -d "1"
+args error
+s2> rm -d 1
+done
+s1> exit
+exit
+s2> exit
+exit

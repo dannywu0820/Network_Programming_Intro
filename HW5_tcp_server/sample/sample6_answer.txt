@@ -1,0 +1,30 @@
+#
+# This smaple tests functionalities in free orders of arguments
+#
+s1> init -u Jack
+Jack@nctu.edu.tw
+s1> wt -d Jack@nctu.edu.tw -t To_myself -c Hello_I_am_Jack
+done
+s1> wt -d Jack@nctu.edu.tw -c Hello_I_am_Jack -t To_myself
+done
+s1> wt -t To_myself -c Hello_I_am_Jack -d Jack@nctu.edu.tw
+done
+s1> wt -t To_myself -d Jack@nctu.edu.tw -c Hello_I_am_Jack
+done
+s1> wt -c Hello_I_am_Jack -t To_myself -d Jack@nctu.edu.tw
+done
+s1> wt -c Hello_I_am_Jack -d Jack@nctu.edu.tw -t To_myself
+done
+s1> ls -l
+1. To_myself(new)
+2. To_myself(new)
+3. To_myself(new)
+4. To_myself(new)
+5. To_myself(new)
+6. To_myself(new)
+s1> rm -D
+done
+s1> ls -l
+no mail
+s1> exit
+exit

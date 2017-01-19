@@ -1,0 +1,79 @@
+#
+# This smaple tests functionalities in reply and forward
+#
+s1> init -u Jack
+Jack@nctu.edu.tw
+s2> init -u Ann
+Ann@nctu.edu.tw
+s3> init -u Mark
+Mark@nctu.edu.tw
+s1> ls -u
+Jack@nctu.edu.tw
+Ann@nctu.edu.tw
+Mark@nctu.edu.tw
+s2> ls -l
+no mail
+s3> ls -a
+Account: Mark
+Mail address: Mark@nctu.edu.tw
+Number of mails: 0
+s1> wt -d Ann@nctu.edu.tw -t Hi -c I_am_Jack
+done
+s1> wt -d Mark@nctu.edu.tw -t Hi -c I_am_Jack
+done
+s2> fwd -d Mark@nctu.edu.tw -c Who_is_Jack -n 1
+done
+s3> ls -l
+1. Hi(new)
+2. fwd:Hi(new)
+s3> re -c I_dont_know -n 2
+done
+s3> re -c Hi_I_am_Mark -n 1
+done
+s2> fwd -d Jack@nctu.edu.tw -c Who_are_you -n 2
+done
+s1> ls -l
+1. re:Hi(new)
+2. fwd:Hi(new)
+s1> rd -r 1
+From: Mark@nctu.edu.tw
+To: Jack@nctu.edu.tw
+Date: 2015-11-9 14:41:57
+Title: re:Hi
+Content: Hi_I_am_Mark
+----
+From: Jack@nctu.edu.tw
+To: Mark@nctu.edu.tw
+Date: 2015-11-9 14:41:57
+Title: Hi
+Content: I_am_Jack
+s1> rd -r 2
+From: Ann@nctu.edu.tw
+To: Jack@nctu.edu.tw
+Date: 2015-11-9 14:41:57
+Title: fwd:Hi
+Content: Who_are_you
+----
+From: Mark@nctu.edu.tw
+To: Ann@nctu.edu.tw
+Date: 2015-11-9 14:41:57
+Title: re:Hi
+Content: I_dont_know
+----
+From: Ann@nctu.edu.tw
+To: Mark@nctu.edu.tw
+Date: 2015-11-9 14:41:57
+Title: fwd:Hi
+Content: Who_is_Jack
+----
+From: Jack@nctu.edu.tw
+To: Ann@nctu.edu.tw
+Date: 2015-11-9 14:41:57
+Title: Hi
+Content: I_am_Jack
+s1> exit
+exit
+s2> exit
+exit
+s3> exit
+exit

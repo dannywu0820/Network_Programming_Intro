@@ -1,0 +1,29 @@
+#
+# This smaple tests functionalities in arguments with free whitespace
+#
+s1> init    -u   Jack
+Jack@nctu.edu.tw
+s1> ls     -a
+Account: Jack
+Mail address: Jack@nctu.edu.tw
+Number of mails: 0
+s1> ls    -u
+Jack@nctu.edu.tw
+s1> ls   -l
+no mail
+s1> wt   -d    Jack@nctu.edu.tw   -t    To_myself   -c    Hello_I_am_Jack
+done
+s1>    ls   -l
+1. To_myself(new)
+s1> rd    -r      1
+From: Jack@nctu.edu.tw
+To: Jack@nctu.edu.tw
+Date: 2015-11-9 14:40:33
+Title: To_myself
+Content: Hello_I_am_Jack
+s1> rm    -d    1
+done
+s1>    ls     -l
+no mail
+s1>  exit
+exit

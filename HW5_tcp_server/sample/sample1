@@ -1,0 +1,12 @@
+{ "init" : ["s1"],
+  "rows" : [{ "client" : "s1", "action": "init -u Jack"},
+			{ "client" : "s1", "action": "ls -a"},
+			{ "client" : "s1", "action": "ls -u"},
+			{ "client" : "s1", "action": "ls -l"},
+			{ "client" : "s1", "action": "wt -d Jack@nctu.edu.tw -t To_myself -c Hello_I_am_Jack"},
+			{ "client" : "s1", "action": "ls -l"},
+			{ "client" : "s1", "action": "rd -r 1"},
+			{ "client" : "s1", "action": "rm -d 1"},
+			{ "client" : "s1", "action": "ls -l"},
+			{ "client" : "s1", "action": "exit"}
+]}
