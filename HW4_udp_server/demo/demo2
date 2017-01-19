@@ -1,0 +1,14 @@
+s1 init 1001
+s1 save 1000
+s2 init 1002
+s3 init 1003
+s1 remit 600 s3
+s1 withdraw 200
+s3 remit 300 s2
+s3 remit 300 s2
+s2 withdraw 200
+s1 show
+s2 withdraw 200
+s2 show
+s3 show
+end

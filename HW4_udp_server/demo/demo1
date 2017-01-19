@@ -1,0 +1,11 @@
+s1 init 1001
+s2 init 1002
+s1 save 1000
+s1 show
+s2 save 1000
+s1 remit 500 s2
+s2 withdraw 500
+s2 show
+s2 show
+s1 show
+end

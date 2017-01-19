@@ -1,0 +1,13 @@
+s1 init 1001
+s2 init 1002
+s1 save 1000
+s2 save 1000
+bomb
+s3 init 1003
+s2 remit 500 s1
+s1 save 100
+s3 save 200 
+s1 show
+s2 show
+s3 show
+end
